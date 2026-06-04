@@ -29,23 +29,9 @@
     padding: 24px 16px 48px;
   }
 
-  header {
-    text-align: center;
-    margin-bottom: 32px;
-  }
-
-  header h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 0.04em;
-  }
-
-  header p {
-    color: var(--muted);
-    font-size: 0.85rem;
-    margin-top: 6px;
-  }
+  header { text-align: center; margin-bottom: 32px; }
+  header h1 { font-size: 1.8rem; font-weight: 700; color: var(--accent); letter-spacing: 0.04em; }
+  header p  { color: var(--muted); font-size: 0.85rem; margin-top: 6px; }
 
   .best-label {
     display: inline-block;
@@ -63,7 +49,7 @@
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
     gap: 20px;
     max-width: 1400px;
     margin: 0 auto;
@@ -77,13 +63,8 @@
     transition: background 0.2s;
     position: relative;
   }
-
   .card:hover { background: var(--card-hover); }
-
-  .card.best {
-    box-shadow: var(--best-glow);
-    border-color: var(--accent2);
-  }
+  .card.best  { box-shadow: var(--best-glow); border-color: var(--accent2); }
 
   .card-header {
     display: flex;
@@ -94,78 +75,63 @@
     padding-bottom: 10px;
   }
 
-  .day-name {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--accent);
-  }
+  .day-name  { font-size: 1.1rem; font-weight: 700; color: var(--accent); }
+  .day-date  { font-size: 0.8rem; color: var(--muted); }
+  .overall-score { font-size: 1.5rem; font-weight: 800; color: var(--accent2); }
+  .overall-label { font-size: 0.65rem; color: var(--muted); text-align: right; line-height: 1.2; }
 
-  .day-date {
-    font-size: 0.8rem;
+  /* ── Section label (Wind / Sound / Tide) ── */
+  .section-block { margin-bottom: 10px; }
+
+  .section-title {
+    font-size: 0.68rem;
     color: var(--muted);
-  }
-
-  .overall-score {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--accent2);
-  }
-
-  .overall-label {
-    font-size: 0.65rem;
-    color: var(--muted);
-    text-align: right;
-    line-height: 1.2;
-  }
-
-  .rows { display: flex; flex-direction: column; gap: 10px; }
-
-  .row {
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 8px;
+    gap: 5px;
   }
 
-  .row-label {
-    font-size: 0.75rem;
-    color: var(--muted);
-    min-width: 90px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  /* ── AM / PM split row ── */
+  .ampm-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 4px;
   }
 
-  .row-detail {
-    font-size: 0.82rem;
-    color: var(--text);
-    flex: 1;
-    text-align: right;
-  }
-
-  .stars {
+  .ampm-cell {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 7px 10px;
     display: flex;
+    flex-direction: column;
     gap: 3px;
-    justify-content: flex-end;
-    min-width: 80px;
   }
 
-  .star {
-    width: 13px;
-    height: 13px;
-    border-radius: 2px;
+  .ampm-label {
+    font-size: 0.62rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
   }
 
-  .star.filled { background: var(--accent2); }
-  .star.half   { background: linear-gradient(90deg, var(--accent2) 50%, var(--border) 50%); }
-  .star.empty  { background: var(--border); }
-
-  .score-badge {
+  .ampm-detail {
     font-size: 0.78rem;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .ampm-badge {
+    align-self: flex-start;
+    font-size: 0.72rem;
     font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 6px;
-    min-width: 36px;
-    text-align: center;
+    padding: 1px 7px;
+    border-radius: 5px;
+    margin-top: 2px;
   }
 
   .score-5 { background: #1a5c3a; color: #38e4a0; }
@@ -174,116 +140,81 @@
   .score-2 { background: #4a2510; color: #ff8c42; }
   .score-1 { background: #4a1010; color: #ff5c5c; }
 
-  .tide-block {
-    margin-top: 12px;
-    padding-top: 10px;
-    border-top: 1px solid var(--border);
-    font-size: 0.78rem;
-  }
-
-  .tide-block .tide-title {
-    color: var(--muted);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 6px;
-  }
-
-  .tide-entries {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .tide-entry {
-    background: rgba(0,191,255,0.08);
-    border: 1px solid rgba(0,191,255,0.18);
-    border-radius: 6px;
-    padding: 4px 8px;
-    font-size: 0.74rem;
-    line-height: 1.4;
-  }
-
-  .tide-entry .tide-type { color: var(--muted); font-size: 0.68rem; }
-  .tide-entry .tide-time { color: var(--text); font-weight: 600; }
-  .tide-entry .tide-ht   { color: var(--accent); }
-
-  .best-window {
-    margin-top: 12px;
-    padding: 8px 12px;
-    background: rgba(56,228,160,0.08);
-    border: 1px solid rgba(56,228,160,0.25);
-    border-radius: 8px;
-    font-size: 0.78rem;
-    color: var(--accent2);
-  }
-
-  .best-window .bw-label {
-    font-size: 0.65rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 2px;
-  }
-
-  .tstm-flag {
-    margin-top: 10px;
-    padding: 6px 10px;
-    background: rgba(255,92,92,0.12);
-    border: 1px solid rgba(255,92,92,0.35);
-    border-radius: 6px;
-    font-size: 0.74rem;
-    color: var(--danger);
+  /* single-value row (tide, solunar) */
+  .row {
     display: flex;
     align-items: center;
-    gap: 6px;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .row-label  { font-size: 0.75rem; color: var(--muted); min-width: 90px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .row-detail { font-size: 0.82rem; color: var(--text); flex: 1; text-align: right; }
+  .score-badge {
+    font-size: 0.78rem; font-weight: 700;
+    padding: 2px 8px; border-radius: 6px;
+    min-width: 36px; text-align: center;
   }
 
   .source-tag {
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     background: rgba(0,0,0,0.3);
     border: 1px solid var(--border);
     border-radius: 4px;
     padding: 1px 5px;
     color: var(--muted);
-    margin-left: 4px;
     vertical-align: middle;
   }
 
+  .divider { border: none; border-top: 1px solid var(--border); margin: 10px 0; }
+
+  /* tide block */
+  .tide-block { margin-top: 4px; }
+  .tide-block .tide-title {
+    color: var(--muted); font-size: 0.68rem;
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;
+  }
+  .tide-entries { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tide-entry {
+    background: rgba(0,191,255,0.08);
+    border: 1px solid rgba(0,191,255,0.18);
+    border-radius: 6px; padding: 4px 8px;
+    font-size: 0.74rem; line-height: 1.4;
+  }
+  .tide-entry .tide-type { color: var(--muted); font-size: 0.68rem; }
+  .tide-entry .tide-time { color: var(--text); font-weight: 600; }
+  .tide-entry .tide-ht   { color: var(--accent); }
+
+  .best-window {
+    margin-top: 12px; padding: 8px 12px;
+    background: rgba(56,228,160,0.08);
+    border: 1px solid rgba(56,228,160,0.25);
+    border-radius: 8px; font-size: 0.78rem; color: var(--accent2);
+  }
+  .best-window .bw-label {
+    font-size: 0.65rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px;
+  }
+
+  .tstm-flag {
+    margin-top: 10px; padding: 6px 10px;
+    background: rgba(255,92,92,0.12);
+    border: 1px solid rgba(255,92,92,0.35);
+    border-radius: 6px; font-size: 0.74rem; color: var(--danger);
+    display: flex; align-items: center; gap: 6px;
+  }
+
   footer {
-    max-width: 1400px;
-    margin: 36px auto 0;
-    padding: 20px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    font-size: 0.78rem;
-    color: var(--muted);
+    max-width: 1400px; margin: 36px auto 0; padding: 20px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    font-size: 0.78rem; color: var(--muted);
   }
-
-  footer h3 {
-    color: var(--text);
-    font-size: 0.85rem;
-    margin-bottom: 10px;
-  }
-
-  .legend-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 8px 24px;
-  }
-
+  footer h3 { color: var(--text); font-size: 0.85rem; margin-bottom: 10px; }
+  .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px 24px; }
   .legend-item { line-height: 1.6; }
   .legend-item strong { color: var(--accent); }
-
   .nws-tag { color: #38e4a0; font-weight: 700; }
   .est-tag  { color: #ffc94d; font-weight: 700; }
-
-  .score-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
 </style>
 </head>
 <body>
@@ -296,409 +227,444 @@
 
 <div class="grid">
 
-  <!-- ══════════════ THURSDAY ══════════════ -->
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="day-name">Thursday</div>
-        <div class="day-date">June 4, 2026</div>
-      </div>
-      <div style="text-align:right">
-        <div class="overall-score">4<span style="font-size:0.9rem;color:var(--muted)">/5</span></div>
-        <div class="overall-label">Overall<br>Boating</div>
-      </div>
+<!-- ══════════════════════════════════════════
+     THURSDAY  Jun 4
+══════════════════════════════════════════ -->
+<div class="card">
+  <div class="card-header">
+    <div>
+      <div class="day-name">Thursday</div>
+      <div class="day-date">June 4, 2026</div>
     </div>
-    <div class="rows">
-
-      <div class="row">
-        <span class="row-label">Wind <span class="source-tag">NWS</span></span>
-        <span class="row-detail">N 10–15 kt → E aft.</span>
-        <span class="score-badge score-4">4/5</span>
-      </div>
-
-      <div class="row">
-        <span class="row-label">Sound <span class="source-tag">NWS</span></span>
-        <span class="row-detail">Moderate chop</span>
-        <span class="score-badge score-3">3/5</span>
-      </div>
-
-      <div class="row">
-        <span class="row-label">Tide <span class="source-tag">NWS</span></span>
-        <span class="row-detail">High ~11:10 AM</span>
-        <span class="score-badge score-5">5/5</span>
-      </div>
-
-      <div class="row">
-        <span class="row-label">Solunar <span class="source-tag">est.</span></span>
-        <span class="row-detail">—</span>
-        <span class="score-badge score-3">N/A</span>
-      </div>
-
-    </div>
-
-    <div class="tide-block">
-      <div class="tide-title">Bogue Inlet Tides (est.)</div>
-      <div class="tide-entries">
-        <div class="tide-entry">
-          <div class="tide-type">Low</div>
-          <div class="tide-time">~5:15 AM</div>
-          <div class="tide-ht">~0.3 ft</div>
-        </div>
-        <div class="tide-entry">
-          <div class="tide-type">High</div>
-          <div class="tide-time">~11:10 AM</div>
-          <div class="tide-ht">~2.0 ft</div>
-        </div>
-        <div class="tide-entry">
-          <div class="tide-type">Low</div>
-          <div class="tide-time">~5:00 PM</div>
-          <div class="tide-ht">~0.3 ft</div>
-        </div>
-        <div class="tide-entry">
-          <div class="tide-type">High</div>
-          <div class="tide-time">~11:21 PM</div>
-          <div class="tide-ht">~2.4 ft</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="best-window">
-      <div class="bw-label">Best Window</div>
-      10 AM – 2 PM · Around high tide, before afternoon chop builds
+    <div style="text-align:right">
+      <div class="overall-score">3.5<span style="font-size:0.8rem;color:var(--muted)">/5</span></div>
+      <div class="overall-label">Overall<br>Boating</div>
     </div>
   </div>
 
-  <!-- ══════════════ FRIDAY — BEST DAY ══════════════ -->
-  <div class="card best">
-    <div class="card-header">
-      <div>
-        <div class="day-name">Friday <span class="best-label">Best Day</span></div>
-        <div class="day-date">June 5, 2026</div>
+  <!-- Wind -->
+  <div class="section-block">
+    <div class="section-title">Wind <span class="source-tag">NWS</span></div>
+    <div class="ampm-row">
+      <div class="ampm-cell">
+        <span class="ampm-label">Morning</span>
+        <span class="ampm-detail">N 10–15 kt</span>
+        <span class="ampm-badge score-4">4/5</span>
       </div>
-      <div style="text-align:right">
-        <div class="overall-score" style="color:#38e4a0">5<span style="font-size:0.9rem;color:var(--muted)">/5</span></div>
-        <div class="overall-label">Overall<br>Boating</div>
+      <div class="ampm-cell">
+        <span class="ampm-label">Afternoon</span>
+        <span class="ampm-detail">E 10–15 kt</span>
+        <span class="ampm-badge score-4">4/5</span>
       </div>
-    </div>
-    <div class="rows">
-
-      <div class="row">
-        <span class="row-label">Wind <span class="source-tag">NWS</span></span>
-        <span class="row-detail">NW ~5 kt → SW aft.</span>
-        <span class="score-badge score-5">5/5</span>
-      </div>
-
-      <div class="row">
-        <span class="row-label">Sound <span class="source-tag">NWS</span></span>
-        <span class="row-detail">Flat → light chop aft.</span>
-        <span class="score-badge score-5">5/5</span>
-      </div>
-
-      <div class="row">
-        <span class="row-label">Tide <span class="source-tag">NWS</span></span>
-        <span class="row-detail">High ~12:00 PM</span>
-        <span class="score-badge score-5">5/5</span>
-      </div>
-
-      <div class="row">
-        <span class="row-label">Solunar <span class="source-tag">est.</span></span>
-        <span class="row-detail">—</span>
-        <span class="score-badge score-3">N/A</span>
-      </div>
-
-    </div>
-
-    <div class="tide-block">
-      <div class="tide-title">Bogue Inlet Tides (est.)</div>
-      <div class="tide-entries">
-        <div class="tide-entry">
-          <div class="tide-type">Low</div>
-          <div class="tide-time">~6:05 AM</div>
-          <div class="tide-ht">~0.3 ft</div>
-        </div>
-        <div class="tide-entry">
-          <div class="tide-type">High</div>
-          <div class="tide-time">~12:00 PM</div>
-          <div class="tide-ht">~2.0 ft</div>
-        </div>
-        <div class="tide-entry">
-          <div class="tide-type">Low</div>
-          <div class="tide-time">~5:50 PM</div>
-          <div class="tide-ht">~0.3 ft</div>
-        </div>
-        <div class="tide-entry">
-          <div class="tide-type">High</div>
-          <div class="tide-time">~12:11 AM</div>
-          <div class="tide-ht">~2.4 ft</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="best-window">
-      <div class="bw-label">Best Window</div>
-      8 AM – 1 PM · Flat water, gentle breeze, high tide at noon — ideal conditions
     </div>
   </div>
 
-  <!-- ══════════════ SATURDAY ══════════════ -->
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="day-name">Saturday</div>
-        <div class="day-date">June 6, 2026</div>
+  <!-- Sound -->
+  <div class="section-block">
+    <div class="section-title">Sound Conditions <span class="source-tag">NWS</span></div>
+    <div class="ampm-row">
+      <div class="ampm-cell">
+        <span class="ampm-label">Morning</span>
+        <span class="ampm-detail">Moderate chop</span>
+        <span class="ampm-badge score-3">3/5</span>
       </div>
-      <div style="text-align:right">
-        <div class="overall-score">4<span style="font-size:0.9rem;color:var(--muted)">/5</span></div>
-        <div class="overall-label">Overall<br>Boating</div>
+      <div class="ampm-cell">
+        <span class="ampm-label">Afternoon</span>
+        <span class="ampm-detail">Moderate chop</span>
+        <span class="ampm-badge score-3">3/5</span>
       </div>
-    </div>
-    <div class="rows">
-
-      <div class="row">
-        <span class="row-label">Wind <span class="source-tag">NWS</span></span>
-        <span class="row-detail">SW 5–10 → 10–15 aft.</span>
-        <span class="score-badge score-4">4/5</span>
-      </div>
-
-      <div class="row">
-        <span class="row-label">Sound <span class="source-tag">NWS</span></span>
-        <span class="row-detail">Light chop → mod. chop aft.</span>
-        <span class="score-badge score-4">4/5</span>
-      </div>
-
-      <div class="row">
-        <span class="row-label">Tide <span class="source-tag">NWS</span></span>
-        <span class="row-detail">High ~12:50 PM</span>
-        <span class="score-badge score-4">4/5</span>
-      </div>
-
-      <div class="row">
-        <span class="row-label">Solunar <span class="source-tag">est.</span></span>
-        <span class="row-detail">—</span>
-        <span class="score-badge score-3">N/A</span>
-      </div>
-
-    </div>
-
-    <div class="tide-block">
-      <div class="tide-title">Bogue Inlet Tides (est.)</div>
-      <div class="tide-entries">
-        <div class="tide-entry">
-          <div class="tide-type">Low</div>
-          <div class="tide-time">~6:55 AM</div>
-          <div class="tide-ht">~0.3 ft</div>
-        </div>
-        <div class="tide-entry">
-          <div class="tide-type">High</div>
-          <div class="tide-time">~12:50 PM</div>
-          <div class="tide-ht">~2.0 ft</div>
-        </div>
-        <div class="tide-entry">
-          <div class="tide-type">Low</div>
-          <div class="tide-time">~6:40 PM</div>
-          <div class="tide-ht">~0.3 ft</div>
-        </div>
-        <div class="tide-entry">
-          <div class="tide-type">High</div>
-          <div class="tide-time">~1:01 AM</div>
-          <div class="tide-ht">~2.4 ft</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="best-window">
-      <div class="bw-label">Best Window</div>
-      8 AM – 12 PM · Get out early before afternoon winds pick up
     </div>
   </div>
 
-  <!-- ══════════════ SUNDAY ══════════════ -->
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="day-name">Sunday</div>
-        <div class="day-date">June 7, 2026</div>
-      </div>
-      <div style="text-align:right">
-        <div class="overall-score">3<span style="font-size:0.9rem;color:var(--muted)">/5</span></div>
-        <div class="overall-label">Overall<br>Boating</div>
-      </div>
-    </div>
-    <div class="rows">
+  <hr class="divider">
 
-      <div class="row">
-        <span class="row-label">Wind <span class="source-tag">NWS</span></span>
-        <span class="row-detail">SW 10–15 kt</span>
-        <span class="score-badge score-4">4/5</span>
-      </div>
+  <div class="row">
+    <span class="row-label">Tide <span class="source-tag">NWS</span></span>
+    <span class="row-detail">High ~11:10 AM</span>
+    <span class="score-badge score-5">5/5</span>
+  </div>
+  <div class="row">
+    <span class="row-label">Solunar <span class="source-tag">est.</span></span>
+    <span class="row-detail">N/A</span>
+    <span class="score-badge score-3">—</span>
+  </div>
 
-      <div class="row">
-        <span class="row-label">Sound <span class="source-tag">NWS</span></span>
-        <span class="row-detail">Moderate chop</span>
-        <span class="score-badge score-3">3/5</span>
-      </div>
-
-      <div class="row">
-        <span class="row-label">Tide <span class="source-tag">NWS</span></span>
-        <span class="row-detail">High ~1:40 PM</span>
-        <span class="score-badge score-4">4/5</span>
-      </div>
-
-      <div class="row">
-        <span class="row-label">Solunar <span class="source-tag">est.</span></span>
-        <span class="row-detail">—</span>
-        <span class="score-badge score-3">N/A</span>
-      </div>
-
-    </div>
-
-    <div class="tide-block">
-      <div class="tide-title">Bogue Inlet Tides (est.)</div>
-      <div class="tide-entries">
-        <div class="tide-entry">
-          <div class="tide-type">Low</div>
-          <div class="tide-time">~7:45 AM</div>
-          <div class="tide-ht">~0.3 ft</div>
-        </div>
-        <div class="tide-entry">
-          <div class="tide-type">High</div>
-          <div class="tide-time">~1:40 PM</div>
-          <div class="tide-ht">~2.0 ft</div>
-        </div>
-        <div class="tide-entry">
-          <div class="tide-type">Low</div>
-          <div class="tide-time">~7:30 PM</div>
-          <div class="tide-ht">~0.3 ft</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="tstm-flag">
-      ⚡ Thunderstorm chance after midnight Sunday night — winds and seas higher in and near storms
-    </div>
-
-    <div class="best-window">
-      <div class="bw-label">Best Window</div>
-      9 AM – 1 PM · Moderate chop all day; be off water before evening
+  <div class="tide-block" style="margin-top:10px;">
+    <div class="tide-title">Bogue Inlet Tides (est.)</div>
+    <div class="tide-entries">
+      <div class="tide-entry"><div class="tide-type">Low</div><div class="tide-time">~5:15 AM</div><div class="tide-ht">~0.3 ft</div></div>
+      <div class="tide-entry"><div class="tide-type">High</div><div class="tide-time">~11:10 AM</div><div class="tide-ht">~2.0 ft</div></div>
+      <div class="tide-entry"><div class="tide-type">Low</div><div class="tide-time">~5:00 PM</div><div class="tide-ht">~0.3 ft</div></div>
+      <div class="tide-entry"><div class="tide-type">High</div><div class="tide-time">~11:21 PM</div><div class="tide-ht">~2.4 ft</div></div>
     </div>
   </div>
 
-  <!-- ══════════════ MONDAY ══════════════ -->
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="day-name">Monday</div>
-        <div class="day-date">June 8, 2026</div>
-      </div>
-      <div style="text-align:right">
-        <div class="overall-score">3<span style="font-size:0.9rem;color:var(--muted)">/5</span></div>
-        <div class="overall-label">Overall<br>Boating</div>
-      </div>
+  <div class="best-window">
+    <div class="bw-label">Best Window</div>
+    10 AM – 1 PM · Around high tide; chop consistent all day, morning slightly better with N wind
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     FRIDAY  Jun 5  ★ BEST DAY
+══════════════════════════════════════════ -->
+<div class="card best">
+  <div class="card-header">
+    <div>
+      <div class="day-name">Friday <span class="best-label">Best Day</span></div>
+      <div class="day-date">June 5, 2026</div>
     </div>
-    <div class="rows">
-
-      <div class="row">
-        <span class="row-label">Wind <span class="source-tag">NWS</span></span>
-        <span class="row-detail">W 5–10 → NE 10–15 aft.</span>
-        <span class="score-badge score-4">4/5</span>
-      </div>
-
-      <div class="row">
-        <span class="row-label">Sound <span class="source-tag">NWS</span></span>
-        <span class="row-detail">Light chop → mod. chop aft.</span>
-        <span class="score-badge score-3">3/5</span>
-      </div>
-
-      <div class="row">
-        <span class="row-label">Tide <span class="source-tag">NWS</span></span>
-        <span class="row-detail">High ~2:30 PM</span>
-        <span class="score-badge score-4">4/5</span>
-      </div>
-
-      <div class="row">
-        <span class="row-label">Solunar <span class="source-tag">est.</span></span>
-        <span class="row-detail">—</span>
-        <span class="score-badge score-3">N/A</span>
-      </div>
-
-    </div>
-
-    <div class="tide-block">
-      <div class="tide-title">Bogue Inlet Tides (est.)</div>
-      <div class="tide-entries">
-        <div class="tide-entry">
-          <div class="tide-type">Low</div>
-          <div class="tide-time">~8:35 AM</div>
-          <div class="tide-ht">~0.3 ft</div>
-        </div>
-        <div class="tide-entry">
-          <div class="tide-type">High</div>
-          <div class="tide-time">~2:30 PM</div>
-          <div class="tide-ht">~2.0 ft</div>
-        </div>
-        <div class="tide-entry">
-          <div class="tide-type">Low</div>
-          <div class="tide-time">~8:20 PM</div>
-          <div class="tide-ht">~0.3 ft</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="tstm-flag">
-      ⚡ Chance of showers and thunderstorms — winds and seas higher in and near storms
-    </div>
-
-    <div class="best-window">
-      <div class="bw-label">Best Window</div>
-      8 AM – 11 AM · Get out early; tstm risk increases through the day
+    <div style="text-align:right">
+      <div class="overall-score" style="color:#38e4a0">5<span style="font-size:0.8rem;color:var(--muted)">/5</span></div>
+      <div class="overall-label">Overall<br>Boating</div>
     </div>
   </div>
+
+  <!-- Wind -->
+  <div class="section-block">
+    <div class="section-title">Wind <span class="source-tag">NWS</span></div>
+    <div class="ampm-row">
+      <div class="ampm-cell">
+        <span class="ampm-label">Morning</span>
+        <span class="ampm-detail">NW ~5 kt</span>
+        <span class="ampm-badge score-5">5/5</span>
+      </div>
+      <div class="ampm-cell">
+        <span class="ampm-label">Afternoon</span>
+        <span class="ampm-detail">SW ~5 kt</span>
+        <span class="ampm-badge score-5">5/5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sound -->
+  <div class="section-block">
+    <div class="section-title">Sound Conditions <span class="source-tag">NWS</span></div>
+    <div class="ampm-row">
+      <div class="ampm-cell">
+        <span class="ampm-label">Morning</span>
+        <span class="ampm-detail">Flat</span>
+        <span class="ampm-badge score-5">5/5</span>
+      </div>
+      <div class="ampm-cell">
+        <span class="ampm-label">Afternoon</span>
+        <span class="ampm-detail">Light chop</span>
+        <span class="ampm-badge score-4">4/5</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="row">
+    <span class="row-label">Tide <span class="source-tag">NWS</span></span>
+    <span class="row-detail">High ~12:00 PM</span>
+    <span class="score-badge score-5">5/5</span>
+  </div>
+  <div class="row">
+    <span class="row-label">Solunar <span class="source-tag">est.</span></span>
+    <span class="row-detail">N/A</span>
+    <span class="score-badge score-3">—</span>
+  </div>
+
+  <div class="tide-block" style="margin-top:10px;">
+    <div class="tide-title">Bogue Inlet Tides (est.)</div>
+    <div class="tide-entries">
+      <div class="tide-entry"><div class="tide-type">Low</div><div class="tide-time">~6:05 AM</div><div class="tide-ht">~0.3 ft</div></div>
+      <div class="tide-entry"><div class="tide-type">High</div><div class="tide-time">~12:00 PM</div><div class="tide-ht">~2.0 ft</div></div>
+      <div class="tide-entry"><div class="tide-type">Low</div><div class="tide-time">~5:50 PM</div><div class="tide-ht">~0.3 ft</div></div>
+      <div class="tide-entry"><div class="tide-type">High</div><div class="tide-time">~12:11 AM</div><div class="tide-ht">~2.4 ft</div></div>
+    </div>
+  </div>
+
+  <div class="best-window">
+    <div class="bw-label">Best Window</div>
+    8 AM – 1 PM · Flat water and &lt;5 kt all morning; light chop builds in the afternoon
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SATURDAY  Jun 6
+══════════════════════════════════════════ -->
+<div class="card">
+  <div class="card-header">
+    <div>
+      <div class="day-name">Saturday</div>
+      <div class="day-date">June 6, 2026</div>
+    </div>
+    <div style="text-align:right">
+      <div class="overall-score">4<span style="font-size:0.8rem;color:var(--muted)">/5</span></div>
+      <div class="overall-label">Overall<br>Boating</div>
+    </div>
+  </div>
+
+  <!-- Wind -->
+  <div class="section-block">
+    <div class="section-title">Wind <span class="source-tag">NWS</span></div>
+    <div class="ampm-row">
+      <div class="ampm-cell">
+        <span class="ampm-label">Morning</span>
+        <span class="ampm-detail">SW 5–10 kt</span>
+        <span class="ampm-badge score-5">5/5</span>
+      </div>
+      <div class="ampm-cell">
+        <span class="ampm-label">Afternoon</span>
+        <span class="ampm-detail">SW 10–15 kt</span>
+        <span class="ampm-badge score-4">4/5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sound -->
+  <div class="section-block">
+    <div class="section-title">Sound Conditions <span class="source-tag">NWS</span></div>
+    <div class="ampm-row">
+      <div class="ampm-cell">
+        <span class="ampm-label">Morning</span>
+        <span class="ampm-detail">Light chop</span>
+        <span class="ampm-badge score-4">4/5</span>
+      </div>
+      <div class="ampm-cell">
+        <span class="ampm-label">Afternoon</span>
+        <span class="ampm-detail">Moderate chop</span>
+        <span class="ampm-badge score-3">3/5</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="row">
+    <span class="row-label">Tide <span class="source-tag">NWS</span></span>
+    <span class="row-detail">High ~12:50 PM</span>
+    <span class="score-badge score-4">4/5</span>
+  </div>
+  <div class="row">
+    <span class="row-label">Solunar <span class="source-tag">est.</span></span>
+    <span class="row-detail">N/A</span>
+    <span class="score-badge score-3">—</span>
+  </div>
+
+  <div class="tide-block" style="margin-top:10px;">
+    <div class="tide-title">Bogue Inlet Tides (est.)</div>
+    <div class="tide-entries">
+      <div class="tide-entry"><div class="tide-type">Low</div><div class="tide-time">~6:55 AM</div><div class="tide-ht">~0.3 ft</div></div>
+      <div class="tide-entry"><div class="tide-type">High</div><div class="tide-time">~12:50 PM</div><div class="tide-ht">~2.0 ft</div></div>
+      <div class="tide-entry"><div class="tide-type">Low</div><div class="tide-time">~6:40 PM</div><div class="tide-ht">~0.3 ft</div></div>
+      <div class="tide-entry"><div class="tide-type">High</div><div class="tide-time">~1:01 AM</div><div class="tide-ht">~2.4 ft</div></div>
+    </div>
+  </div>
+
+  <div class="best-window">
+    <div class="bw-label">Best Window</div>
+    8 AM – 12 PM · Morning has the best combo; conditions worsen through the afternoon
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SUNDAY  Jun 7
+══════════════════════════════════════════ -->
+<div class="card">
+  <div class="card-header">
+    <div>
+      <div class="day-name">Sunday</div>
+      <div class="day-date">June 7, 2026</div>
+    </div>
+    <div style="text-align:right">
+      <div class="overall-score">3<span style="font-size:0.8rem;color:var(--muted)">/5</span></div>
+      <div class="overall-label">Overall<br>Boating</div>
+    </div>
+  </div>
+
+  <!-- Wind -->
+  <div class="section-block">
+    <div class="section-title">Wind <span class="source-tag">NWS</span></div>
+    <div class="ampm-row">
+      <div class="ampm-cell">
+        <span class="ampm-label">Morning</span>
+        <span class="ampm-detail">SW 10–15 kt</span>
+        <span class="ampm-badge score-4">4/5</span>
+      </div>
+      <div class="ampm-cell">
+        <span class="ampm-label">Afternoon</span>
+        <span class="ampm-detail">SW 10–15 kt</span>
+        <span class="ampm-badge score-4">4/5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sound -->
+  <div class="section-block">
+    <div class="section-title">Sound Conditions <span class="source-tag">NWS</span></div>
+    <div class="ampm-row">
+      <div class="ampm-cell">
+        <span class="ampm-label">Morning</span>
+        <span class="ampm-detail">Moderate chop</span>
+        <span class="ampm-badge score-3">3/5</span>
+      </div>
+      <div class="ampm-cell">
+        <span class="ampm-label">Afternoon</span>
+        <span class="ampm-detail">Moderate chop</span>
+        <span class="ampm-badge score-3">3/5</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="row">
+    <span class="row-label">Tide <span class="source-tag">NWS</span></span>
+    <span class="row-detail">High ~1:40 PM</span>
+    <span class="score-badge score-4">4/5</span>
+  </div>
+  <div class="row">
+    <span class="row-label">Solunar <span class="source-tag">est.</span></span>
+    <span class="row-detail">N/A</span>
+    <span class="score-badge score-3">—</span>
+  </div>
+
+  <div class="tide-block" style="margin-top:10px;">
+    <div class="tide-title">Bogue Inlet Tides (est.)</div>
+    <div class="tide-entries">
+      <div class="tide-entry"><div class="tide-type">Low</div><div class="tide-time">~7:45 AM</div><div class="tide-ht">~0.3 ft</div></div>
+      <div class="tide-entry"><div class="tide-type">High</div><div class="tide-time">~1:40 PM</div><div class="tide-ht">~2.0 ft</div></div>
+      <div class="tide-entry"><div class="tide-type">Low</div><div class="tide-time">~7:30 PM</div><div class="tide-ht">~0.3 ft</div></div>
+    </div>
+  </div>
+
+  <div class="tstm-flag">
+    ⚡ Thunderstorm chance after midnight — winds and seas higher in/near storms
+  </div>
+
+  <div class="best-window">
+    <div class="bw-label">Best Window</div>
+    9 AM – 1 PM · Consistent chop all day; be off water before evening tstm risk
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     MONDAY  Jun 8
+══════════════════════════════════════════ -->
+<div class="card">
+  <div class="card-header">
+    <div>
+      <div class="day-name">Monday</div>
+      <div class="day-date">June 8, 2026</div>
+    </div>
+    <div style="text-align:right">
+      <div class="overall-score">3<span style="font-size:0.8rem;color:var(--muted)">/5</span></div>
+      <div class="overall-label">Overall<br>Boating</div>
+    </div>
+  </div>
+
+  <!-- Wind -->
+  <div class="section-block">
+    <div class="section-title">Wind <span class="source-tag">NWS</span></div>
+    <div class="ampm-row">
+      <div class="ampm-cell">
+        <span class="ampm-label">Morning</span>
+        <span class="ampm-detail">W 5–10 kt</span>
+        <span class="ampm-badge score-5">5/5</span>
+      </div>
+      <div class="ampm-cell">
+        <span class="ampm-label">Afternoon</span>
+        <span class="ampm-detail">NE 10–15 kt</span>
+        <span class="ampm-badge score-4">4/5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sound -->
+  <div class="section-block">
+    <div class="section-title">Sound Conditions <span class="source-tag">NWS</span></div>
+    <div class="ampm-row">
+      <div class="ampm-cell">
+        <span class="ampm-label">Morning</span>
+        <span class="ampm-detail">Light chop</span>
+        <span class="ampm-badge score-4">4/5</span>
+      </div>
+      <div class="ampm-cell">
+        <span class="ampm-label">Afternoon</span>
+        <span class="ampm-detail">Moderate chop</span>
+        <span class="ampm-badge score-3">3/5</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="row">
+    <span class="row-label">Tide <span class="source-tag">NWS</span></span>
+    <span class="row-detail">High ~2:30 PM</span>
+    <span class="score-badge score-4">4/5</span>
+  </div>
+  <div class="row">
+    <span class="row-label">Solunar <span class="source-tag">est.</span></span>
+    <span class="row-detail">N/A</span>
+    <span class="score-badge score-3">—</span>
+  </div>
+
+  <div class="tide-block" style="margin-top:10px;">
+    <div class="tide-title">Bogue Inlet Tides (est.)</div>
+    <div class="tide-entries">
+      <div class="tide-entry"><div class="tide-type">Low</div><div class="tide-time">~8:35 AM</div><div class="tide-ht">~0.3 ft</div></div>
+      <div class="tide-entry"><div class="tide-type">High</div><div class="tide-time">~2:30 PM</div><div class="tide-ht">~2.0 ft</div></div>
+      <div class="tide-entry"><div class="tide-type">Low</div><div class="tide-time">~8:20 PM</div><div class="tide-ht">~0.3 ft</div></div>
+    </div>
+  </div>
+
+  <div class="tstm-flag">
+    ⚡ Chance of showers and thunderstorms — winds and seas higher in/near storms
+  </div>
+
+  <div class="best-window">
+    <div class="bw-label">Best Window</div>
+    8 AM – 11 AM · Light chop and manageable wind; tstm risk builds through the day
+  </div>
+</div>
 
 </div><!-- end grid -->
 
-<!-- ══════════════ LEGEND ══════════════ -->
+
+<!-- ══════════════════════════════════════════
+     FOOTER / LEGEND
+══════════════════════════════════════════ -->
 <footer>
   <h3>Source Legend &amp; Scoring Guide</h3>
   <div class="legend-grid" style="margin-top:12px;">
-
     <div class="legend-item">
       <strong><span class="nws-tag">NWS</span> — Official</strong><br>
-      Wind, sound conditions, and ocean seas from the National Weather Service marine forecast (zone AMZ158/AMZ100). Sound conditions use the explicit "adjacent sounds and rivers" language only — ocean seas are <em>not</em> used for sound ratings.
+      Wind, sound conditions from National Weather Service marine forecast (AMZ158/AMZ100). Sound ratings use only the explicit "adjacent sounds and rivers" language — ocean seas are not used.
     </div>
-
     <div class="legend-item">
       <strong><span class="est-tag">est.</span> — Estimated</strong><br>
-      Tide times beyond Wednesday are estimated by advancing each tide ~50 min/day from the NWS-sourced Bogue Inlet anchor point (Wed high: 10:20 AM, 1.98 ft). Solunar ratings were not available in the source page and are shown as N/A.
+      Tide times Thu–Mon estimated by advancing ~50 min/day from NWS-sourced Bogue Inlet anchor (Wed high: 10:20 AM, 1.98 ft). Solunar not available in source.
     </div>
-
     <div class="legend-item">
       <strong>Wind Scoring</strong><br>
       &lt;10 kt = 5/5 · 10–15 = 4/5 · 15–20 = 3/5<br>
       20–25 = 2/5 · &gt;25 or gusts 30+ = 1/5
     </div>
-
     <div class="legend-item">
-      <strong>Sound Conditions Scoring</strong><br>
+      <strong>Sound Scoring</strong><br>
       Flat = 5/5 · Light chop = 4/5 · Moderate chop = 3/5<br>
       Choppy = 2/5 · Rough / Very rough = 1/5
     </div>
-
     <div class="legend-item">
       <strong>Tide Scoring</strong><br>
-      High tide 8 AM–4 PM = 5/5 ideal window<br>
-      High tide 4–6 PM or 6–8 AM = 4/5 · Outside range = 3/5
+      High tide 8 AM–4 PM = 5/5 ideal · Outside window = 4/5 or lower
     </div>
-
     <div class="legend-item">
       <strong>Overall Score</strong><br>
-      Average of Wind, Sound, and Tide ratings.<br>
-      Thunderstorm risk caps overall score at 3/5.
+      Average of Wind, Sound, and Tide. Thunderstorm risk caps overall at 3/5.
     </div>
-
   </div>
   <div style="margin-top:14px; color:#4a6a8a; font-size:0.72rem;">
-    Data fetched June 4, 2026 · NWS marine forecast via l-36.com · Tides: Bogue Inlet, NC (NOAA) ·
-    Forecast valid through June 9 · Always check official NWS before departing.
+    Data fetched June 4, 2026 · NWS marine forecast via l-36.com · Tides: Bogue Inlet, NC (NOAA) · Always verify with official NWS before departing.
   </div>
 </footer>
 
