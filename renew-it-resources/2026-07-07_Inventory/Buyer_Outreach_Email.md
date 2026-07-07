@@ -28,9 +28,12 @@ Approximately **1.35 PB total raw capacity**, all dual-controller, 10GbE SFP+ co
 
 1. **Itemized pricing per array** (by serial number), plus a total for the complete lot
 2. **Certified data sanitization to NIST 800-88**, with a **Certificate of Destruction per array/drive, included at no additional charge** — this is a firm requirement of the sale
-3. Freight/logistics terms — who handles de-racking, packing, and shipping from our two datacenter locations
+3. **All packaging and shipping costs covered by the buyer** — your offer must be inclusive of de-racking, packing materials, and freight from our two datacenter locations; no logistics costs will be borne by the seller
 4. Payment terms and timing (net terms, payment on pickup, etc.)
+   - **New buyers (no prior transaction history with us): a 50% deposit is required** upon offer acceptance, with the balance due before or at equipment release
 5. Any certifications your firm holds (R2v3, NAID AAA, e-Stewards)
+6. **Business references or your DUNS number** — as this would be our first transaction together, please include two or three trade references (companies you've purchased decommissioned equipment from) or your DUNS number so we can verify credit standing
+7. **A valid resale certificate** (state sales-tax resale/exemption certificate) with your offer, so this sale is documented as tax-exempt for resale and no sales tax is collected on the transaction
 
 We prefer to sell the lot to a single buyer, but will consider offers on partial groups (e.g., all-flash units only) — please indicate if your offer is lot-only or itemizable.
 
@@ -46,6 +49,8 @@ Thank you — we look forward to your offer.
 
 ## Notes for you (do not send)
 - **[DATE]**: give them 7–10 business days; a deadline forces bids in together so you can compare.
+- **Resale certificate**: collect it BEFORE invoicing and keep it on file — it's your documentation that no sales tax was due on the sale. All five buyers are resellers, so this is routine for them. Verify the certificate lists their state registration number and covers the ship-to state(s).
+- **50% deposit**: established ITAD firms may push back; you can waive it case-by-case for a buyer with strong references/DUNS — that's why #6 is there.
 - Mentioning "a short list of qualified resellers" signals competition without revealing who.
 - Itemized-by-serial pricing lets you mix and match if one buyer is strong on AF and another on HF.
 - The AF80 (S/N 1130) was under active HPE support until 5/31/2026 (most recent of the fleet) — worth mentioning to serious bidders as evidence of care.
