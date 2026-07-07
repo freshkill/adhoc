@@ -1,0 +1,15 @@
+HPE Nimble Storage — Estimated Used / Secondary-Market Values,,,,,,,,,,,,
+"Renew IT Resources  |  Inventory date: 2026-07-07  |  All arrays HW EOS 7/31/2028 (still HPE-supportable, sustains resale)",,,,,,,,,,,,
+"Estimates are fair-market used values for the base array (dual controller). USD. Exclude shipping, tax, support renewal, and installed data. Ranges reflect condition, config & network-adapter variance.",,,,,,,,,,,,
+,,,,,,,,,,,,
+#,Array S/N,Datacenter,Model,Type,Shelves,HDD Raw (TB),SSD Raw (TB),Host Interface,Est. Low (USD),Est. Point (USD),Est. High (USD),Pricing Basis
+1,0862,DDC1,HF40,Hybrid Flash,-,126,11.52,-,15000,16875,18000,"Exact-match refurb listing: HF40 126TB HDD + 11.52TB SSD sells at $16,875."
+2,4469,DDC1,AF60,All Flash,1,-,253,4× Dual 10GbE SFP+,42000,47000,52000,"AF60 184TB base ~$34,950; +~69TB SSD & expansion shelf. Largest AF60 here."
+3,7343,DDC1,AF60,All Flash,1,-,184,4× Dual 10GbE SFP+,33000,37000,41000,"AF60 184TB base ~$34,950 + 1 expansion shelf."
+4,8949,DDC1,AF60,All Flash,0,-,184,4× Dual 10GbE SFP+; 1× Dual 10GBaseT,31000,34950,38000,"Exact-match: AF60 184TB (48×3.84TB) used listed $34,950."
+5,4349,HDC2,HF60,Hybrid Flash,1,294,34.6,3× Dual 10GbE SFP+,26000,30000,34000,"HF60 210TB used ~$23,995; larger 294TB HDD + 34.6TB cache + shelf."
+6,1130,HDC2,AF80,All Flash,0,-,184,4× Dual 10GbE SFP+,55000,65000,79000,"AF80 184TB used listed $79,500 or best offer; flagship controller."
+7,1813,HDC2,AF40,All Flash,0,-,46.1,2× Dual 10GbE SFP+,9000,12000,14000,"AF40 46TB new ~$19,995; used ~55-65% of new."
+8,1843,HDC2,HF60,Hybrid Flash,1,168,32.6,2× Dual 10GbE SFP+,19000,23000,27000,"HF60 mid config; scaled below 294TB unit, includes 1 shelf."
+9,8863,HDC2,HF60,Hybrid Flash,0,126,17.3,3× Dual 10GbE SFP+,15000,18000,21000,"HF60 base, 126TB HDD + 17.3TB cache, no expansion shelf."
+,,,,,,,,PORTFOLIO TOTAL,245000,283825,324000,

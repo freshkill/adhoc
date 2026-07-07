@@ -1,0 +1,30 @@
+Sources & Methodology
+""
+METHODOLOGY
+• 'Used account' pricing = fair-market secondary/refurbished value for the base dual-controller array as configured.
+"• Anchored to live refurbished-dealer and eBay listings (July 2026), then scaled by raw capacity, controller class (AF40<AF60<AF80; HF40<HF60) and expansion shelves."
+"• Point = most-likely transaction price; Low/High bracket condition, warranty, and network-adapter variance."
+"• All arrays share HW End-of-Support 7/31/2028 — still supportable, which preserves resale demand today."
+"• Excludes: shipping, tax, active HPE support/InfoSight renewal, professional services, and any resident data."
+""
+MARKET ANCHORS USED
+"• HF40 126TB HDD + 11.52TB SSD refurb — $16,875 (Enterasource) — exact match to array #1."
+"• HF60 210TB HDD + 23.04TB cache used — $23,995 (eBay, Core 4 Solutions)."
+"• AF60 184TB (48×3.84TB SSD) used — $34,950 (eBay) — matches arrays #3/#4."
+"• AF80 184TB used — $79,500 or best offer (eBay, Core 4 Solutions)."
+"• AF40 46TB (24×1.92TB SSD) new — $19,995 (eBay); used scaled to ~55–65% of new."
+"• AF40/60/80 92TB flash field-upgrade refurb — ~€53,550 (it-market.com) — corroborates AF-series SSD $/TB."
+""
+SOURCE LINKS
+Enterasource — enterasource.com/storage/hpe-nimble
+ALTA Technologies — altatechnologies.com/collections/hpe-nimble-storage
+Spectra — spectra.com/hp/used-systems/83/Used-HP-Nimble-Storage.htm
+eBay HF60 210TB — ebay.com/itm/176841322075
+eBay AF60 184TB — ebay.com/itm/326495257900
+eBay AF80 184TB — ebay.com/itm/166495997287
+eBay AF40 46TB — ebay.com/itm/155085093828
+it-market AF40/60/80 flash upgrade — it-market.com/en/components/controller-cards/hpe/af40
+""
+DISCLAIMER
+"Figures are good-faith estimates for planning only, not offers or appraisals. The used-storage market moves quickly;"
+"confirm with a formal quote from a licensed reseller (Enterasource, ALTA, Spectra, etc.) before any transaction."

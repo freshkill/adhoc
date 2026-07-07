@@ -1,0 +1,10 @@
+#,Array S/N,Datacenter,Model,Type,Shelves,HDD Raw (TB),SSD Raw (TB),Host Interface,HW EOS Date
+1,0862,DDC1,HF40,Hybrid Flash,-,126,11.52,-,7/31/2028
+2,4469,DDC1,AF60,All Flash,1,-,253,4× Dual 10GbE SFP+,7/31/2028
+3,7343,DDC1,AF60,All Flash,1,-,184,4× Dual 10GbE SFP+,7/31/2028
+4,8949,DDC1,AF60,All Flash,0,-,184,4× Dual 10GbE SFP+; 1× Dual 10GBaseT,7/31/2028
+5,4349,HDC2,HF60,Hybrid Flash,1,294,34.6,3× Dual 10GbE SFP+,7/31/2028
+6,1130,HDC2,AF80,All Flash,0,-,184,4× Dual 10GbE SFP+,7/31/2028
+7,1813,HDC2,AF40,All Flash,0,-,46.1,2× Dual 10GbE SFP+,7/31/2028
+8,1843,HDC2,HF60,Hybrid Flash,1,168,32.6,2× Dual 10GbE SFP+,7/31/2028
+9,8863,HDC2,HF60,Hybrid Flash,0,126,17.3,3× Dual 10GbE SFP+,7/31/2028

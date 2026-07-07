@@ -6,9 +6,12 @@
 ## Contents
 | File | Description |
 |------|-------------|
-| `HPE_Nimble_Asset_Inventory.xlsx` | Original asset inventory (as supplied) — 9 HPE Nimble arrays |
-| `HPE_Nimble_Used_Price_Estimate_2026-07-07.xlsx` | Estimated used / secondary-market values + sources & methodology |
+| `HPE_Nimble_Asset_Inventory.csv` | Original asset inventory (as supplied) — 9 HPE Nimble arrays |
+| `HPE_Nimble_Used_Price_Estimate_2026-07-07__Used_Price_Estimate.csv` | Estimated used / secondary-market values |
+| `HPE_Nimble_Used_Price_Estimate_2026-07-07__Sources_Methodology.csv` | Sources & methodology notes |
 | `README.md` | This summary |
+
+> Spreadsheets are stored as CSV so they render as tables directly on GitHub. Open `../../csv-viewer.html` (e.g. via GitHub Pages) for an in-browser viewer/editor.
 
 ## What "used account" pricing means here
 Fair-market **secondary / refurbished** value for each **base dual-controller array as configured**. Figures are anchored to live refurbished-dealer and eBay listings (July 2026), then scaled by raw capacity, controller class, and expansion shelves. All values are **USD** and exclude shipping, tax, active HPE support/InfoSight renewal, professional services, and any resident data.

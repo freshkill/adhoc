@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSV Viewer / Editor</title>
+<style>
+  :root{
+    --bg:#0f1420; --panel:#161d2e; --panel-2:#1d2740; --line:#2a3550;
+    --text:#e7ecf6; --muted:#93a1c0; --accent:#5b9bff; --accent-2:#37d39a;
+    --danger:#ff6b6b; --head:#202b46; --row:#141b2b; --row-alt:#171f31;
+    --edit:#243154;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#f4f6fb; --panel:#ffffff; --panel-2:#eef2fa; --line:#dce3f0;
+      --text:#152036; --muted:#5a6785; --accent:#2f6df0; --accent-2:#0f9d6a;
+      --danger:#d63b3b; --head:#e9eefb; --row:#ffffff; --row-alt:#f6f8fd;
+      --edit:#e6efff;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    background:var(--bg); color:var(--text);
+    font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    display:flex; flex-direction:column; min-height:100vh;
+  }
+  header{
+    padding:14px 18px; border-bottom:1px solid var(--line); background:var(--panel);
+    display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  }
+  header h1{font-size:16px; margin:0; font-weight:650; letter-spacing:.2px}
+  header h1 span{color:var(--muted); font-weight:400}
+  .grow{flex:1}
+  main{flex:1; display:flex; min-height:0}
+  aside{
+    width:280px; border-right:1px solid var(--line); background:var(--panel);
+    padding:14px; overflow:auto; flex-shrink:0;
+  }
+  aside h2{font-size:11px; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin:0 0 8px}
+  .file{
+    display:block; width:100%; text-align:left; border:1px solid var(--line);
+    background:var(--panel-2); color:var(--text); border-radius:8px;
+    padding:9px 11px; margin-bottom:7px; cursor:pointer; font-size:13px;
+    transition:border-color .12s, background .12s; word-break:break-all;
+  }
+  .file:hover{border-color:var(--accent)}
+  .file.active{border-color:var(--accent); background:var(--edit)}
+  .file .sub{display:block; color:var(--muted); font-size:11px; margin-top:2px}
+  #drop{
+    margin-top:12px; border:1.5px dashed var(--line); border-radius:10px;
+    padding:18px 12px; text-align:center; color:var(--muted); font-size:12.5px;
+    cursor:pointer; transition:border-color .12s, background .12s;
+  }
+  #drop.hover{border-color:var(--accent); background:var(--edit); color:var(--text)}
+  section.view{flex:1; display:flex; flex-direction:column; min-width:0}
+  .toolbar{
+    display:flex; align-items:center; gap:8px; padding:10px 16px;
+    border-bottom:1px solid var(--line); background:var(--panel); flex-wrap:wrap;
+  }
+  .name{font-weight:600; font-size:13.5px}
+  .stat{color:var(--muted); font-size:12px}
+  button.btn{
+    border:1px solid var(--line); background:var(--panel-2); color:var(--text);
+    border-radius:7px; padding:7px 12px; cursor:pointer; font-size:12.5px; font-weight:550;
+    transition:border-color .12s, background .12s;
+  }
+  button.btn:hover{border-color:var(--accent)}
+  button.btn:disabled{opacity:.45; cursor:not-allowed}
+  button.btn.primary{background:var(--accent); border-color:var(--accent); color:#fff}
+  button.btn.primary:hover{filter:brightness(1.08)}
+  button.btn.ghost-danger:hover{border-color:var(--danger); color:var(--danger)}
+  .table-wrap{flex:1; overflow:auto; padding:0}
+  table{border-collapse:separate; border-spacing:0; width:max-content; min-width:100%}
+  th,td{border-right:1px solid var(--line); border-bottom:1px solid var(--line); padding:0; vertical-align:top}
+  thead th{
+    position:sticky; top:0; z-index:3; background:var(--head); font-weight:650;
+    text-align:left; white-space:nowrap;
+  }
+  thead th .cell,tbody td .cell{padding:7px 10px; min-width:60px; max-width:520px}
+  tbody td .cell{outline:none; white-space:pre-wrap; word-break:break-word}
+  tbody td .cell:focus{background:var(--edit); box-shadow:inset 0 0 0 2px var(--accent)}
+  tbody tr:nth-child(odd) td{background:var(--row)}
+  tbody tr:nth-child(even) td{background:var(--row-alt)}
+  th.rownum,td.rownum{
+    position:sticky; left:0; z-index:2; background:var(--panel-2); color:var(--muted);
+    text-align:right; white-space:nowrap; user-select:none;
+  }
+  thead th.rownum{z-index:4}
+  th.rownum .cell,td.rownum .cell{padding:7px 10px; min-width:34px; text-align:right}
+  td.rownum .del{
+    display:none; margin-left:6px; color:var(--danger); cursor:pointer; font-weight:700;
+  }
+  tbody tr:hover td.rownum .del{display:inline}
+  .empty{padding:60px 24px; text-align:center; color:var(--muted)}
+  .empty h3{color:var(--text); font-weight:600; margin:0 0 6px}
+  .badge{
+    display:inline-block; background:var(--accent-2); color:#04120c; font-size:10.5px;
+    font-weight:700; border-radius:5px; padding:2px 6px; margin-left:6px;
+  }
+  .badge.hidden{display:none}
+  footer{padding:8px 16px; border-top:1px solid var(--line); background:var(--panel); color:var(--muted); font-size:11.5px}
+  code{background:var(--panel-2); padding:1px 5px; border-radius:4px; font-size:11.5px}
+</style>
+</head>
+<body>
+<header>
+  <h1>CSV Viewer <span>/ Editor</span></h1>
+  <span class="badge hidden" id="dirtyBadge">unsaved edits</span>
+  <div class="grow"></div>
+  <span class="stat" id="hint">Load a file to begin</span>
+</header>
+
+<main>
+  <aside>
+    <h2>Repository files</h2>
+    <div id="repoFiles"></div>
+    <h2 style="margin-top:16px">Open your own</h2>
+    <div id="drop">Drop a <code>.csv</code> here<br>or click to browse</div>
+    <input type="file" id="fileInput" accept=".csv,text/csv" style="display:none">
+  </aside>
+
+  <section class="view">
+    <div class="toolbar">
+      <span class="name" id="curName">No file</span>
+      <span class="stat" id="curStat"></span>
+      <div class="grow"></div>
+      <button class="btn" id="addRow" disabled>+ Row</button>
+      <button class="btn" id="addCol" disabled>+ Column</button>
+      <button class="btn" id="revert" disabled>Revert</button>
+      <button class="btn primary" id="download" disabled>Download CSV</button>
+    </div>
+    <div class="table-wrap" id="tableWrap">
+      <div class="empty">
+        <h3>Pick a file on the left</h3>
+        <div>Repository CSVs load automatically over HTTP (works on GitHub Pages).<br>
+        Or drop any CSV to view &amp; edit it entirely in your browser — nothing is uploaded.</div>
+      </div>
+    </div>
+    <footer>Edits stay in your browser. Click a cell to edit; hover a row number to delete. Use <b>Download CSV</b> to save changes.</footer>
+  </section>
+</main>
+
+<script>
+"use strict";
+
+/* ---- Repository CSVs (relative paths; fetched over HTTP) ---- */
+const REPO_FILES = [
+  {
+    path: "renew-it-resources/2026-07-07_Inventory/HPE_Nimble_Asset_Inventory.csv",
+    label: "HPE Nimble Asset Inventory",
+    sub: "9 arrays"
+  },
+  {
+    path: "renew-it-resources/2026-07-07_Inventory/HPE_Nimble_Used_Price_Estimate_2026-07-07__Used_Price_Estimate.csv",
+    label: "Used Price Estimate",
+    sub: "secondary-market values"
+  },
+  {
+    path: "renew-it-resources/2026-07-07_Inventory/HPE_Nimble_Used_Price_Estimate_2026-07-07__Sources_Methodology.csv",
+    label: "Sources & Methodology",
+    sub: "notes"
+  }
+];
+
+/* ---- RFC 4180-ish CSV parse / stringify ---- */
+function parseCSV(text){
+  // normalize newlines but keep them inside quotes handled by the state machine
+  const rows=[]; let row=[]; let field=""; let i=0; let inQuotes=false;
+  const n=text.length;
+  while(i<n){
+    const c=text[i];
+    if(inQuotes){
+      if(c==='"'){
+        if(text[i+1]==='"'){ field+='"'; i+=2; continue; }
+        inQuotes=false; i++; continue;
+      }
+      field+=c; i++; continue;
+    }
+    if(c==='"'){ inQuotes=true; i++; continue; }
+    if(c===','){ row.push(field); field=""; i++; continue; }
+    if(c==='\r'){ i++; continue; }
+    if(c==='\n'){ row.push(field); rows.push(row); row=[]; field=""; i++; continue; }
+    field+=c; i++;
+  }
+  // last field/row (avoid trailing empty row from final newline)
+  if(field!=="" || row.length>0){ row.push(field); rows.push(row); }
+  return rows;
+}
+
+function needsQuote(s){ return /[",\r\n]/.test(s); }
+function csvField(s){
+  s = s==null ? "" : String(s);
+  return needsQuote(s) ? '"'+s.replace(/"/g,'""')+'"' : s;
+}
+function stringifyCSV(rows){
+  return rows.map(r=>r.map(csvField).join(",")).join("\r\n")+"\r\n";
+}
+
+/* ---- State ---- */
+let state = { name:null, rows:null, original:null, dirty:false };
+
+const $=id=>document.getElementById(id);
+const tableWrap=$("tableWrap");
+
+function setDirty(d){
+  state.dirty=d;
+  $("dirtyBadge").classList.toggle("hidden", !d);
+  $("revert").disabled = !d;
+}
+
+function normalizeRect(rows){
+  const cols=rows.reduce((m,r)=>Math.max(m,r.length),0);
+  rows.forEach(r=>{ while(r.length<cols) r.push(""); });
+  return cols;
+}
+
+function render(){
+  const rows=state.rows;
+  if(!rows || rows.length===0){
+    tableWrap.innerHTML='<div class="empty"><h3>Empty file</h3><div>No rows to show.</div></div>';
+    return;
+  }
+  const cols=normalizeRect(rows);
+  const header=rows[0];
+  let html='<table><thead><tr><th class="rownum"><div class="cell">#</div></th>';
+  for(let c=0;c<cols;c++){
+    html+='<th data-c="'+c+'"><div class="cell" contenteditable="true" data-r="0" data-c="'+c+'"></div></th>';
+  }
+  html+='</tr></thead><tbody>';
+  for(let r=1;r<rows.length;r++){
+    html+='<tr><td class="rownum"><div class="cell">'+r+'<span class="del" data-del="'+r+'" title="Delete row">×</span></div></td>';
+    for(let c=0;c<cols;c++){
+      html+='<td><div class="cell" contenteditable="true" data-r="'+r+'" data-c="'+c+'"></div></td>';
+    }
+    html+='</tr>';
+  }
+  html+='</tbody></table>';
+  tableWrap.innerHTML=html;
+
+  // set text content safely (avoid HTML injection)
+  tableWrap.querySelectorAll('.cell[contenteditable]').forEach(el=>{
+    const r=+el.dataset.r, c=+el.dataset.c;
+    el.textContent = rows[r] && rows[r][c]!=null ? rows[r][c] : "";
+  });
+
+  const dataRows=Math.max(0,rows.length-1);
+  $("curStat").textContent = dataRows+" rows × "+cols+" cols";
+}
+
+/* editing */
+tableWrap.addEventListener("input", e=>{
+  const el=e.target.closest('.cell[contenteditable]'); if(!el) return;
+  const r=+el.dataset.r, c=+el.dataset.c;
+  if(!state.rows[r]) return;
+  state.rows[r][c]=el.textContent;
+  setDirty(true);
+});
+tableWrap.addEventListener("click", e=>{
+  const del=e.target.closest('[data-del]'); if(!del) return;
+  const r=+del.dataset.del;
+  state.rows.splice(r,1);
+  setDirty(true); render();
+});
+
+/* toolbar */
+$("addRow").addEventListener("click", ()=>{
+  if(!state.rows) return;
+  const cols=normalizeRect(state.rows);
+  state.rows.push(new Array(cols).fill(""));
+  setDirty(true); render();
+});
+$("addCol").addEventListener("click", ()=>{
+  if(!state.rows) return;
+  state.rows.forEach(r=>r.push(""));
+  setDirty(true); render();
+});
+$("revert").addEventListener("click", ()=>{
+  if(!state.original) return;
+  state.rows=state.original.map(r=>r.slice());
+  setDirty(false); render();
+});
+$("download").addEventListener("click", ()=>{
+  if(!state.rows) return;
+  const blob=new Blob([stringifyCSV(state.rows)],{type:"text/csv;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=state.name || "export.csv";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href), 4000);
+});
+
+function loadRows(name, rows){
+  state.name=name;
+  state.original=rows.map(r=>r.slice());
+  state.rows=rows.map(r=>r.slice());
+  setDirty(false);
+  $("curName").textContent=name;
+  ["addRow","addCol","download"].forEach(id=>$(id).disabled=false);
+  $("hint").textContent="Editing "+name;
+  render();
+}
+
+function loadText(name, text){ loadRows(name, parseCSV(text)); }
+
+/* repo file list */
+function buildRepoList(){
+  const wrap=$("repoFiles");
+  wrap.innerHTML="";
+  REPO_FILES.forEach(f=>{
+    const b=document.createElement("button");
+    b.className="file";
+    b.innerHTML="";
+    const t=document.createElement("span"); t.textContent=f.label;
+    const s=document.createElement("span"); s.className="sub"; s.textContent=f.sub||f.path.split("/").pop();
+    b.appendChild(t); b.appendChild(s);
+    b.addEventListener("click", async ()=>{
+      document.querySelectorAll(".file").forEach(x=>x.classList.remove("active"));
+      b.classList.add("active");
+      $("hint").textContent="Loading…";
+      try{
+        const res=await fetch(f.path,{cache:"no-store"});
+        if(!res.ok) throw new Error("HTTP "+res.status);
+        loadText(f.path.split("/").pop(), await res.text());
+      }catch(err){
+        tableWrap.innerHTML='<div class="empty"><h3>Could not load file</h3><div>'+
+          f.path+'<br><br>'+err.message+
+          '<br><br>Fetching repo files needs to be served over HTTP (e.g. GitHub Pages or a local server), not opened via <code>file://</code>. You can still drop a CSV on the left.</div></div>';
+        $("hint").textContent="Load failed — try drag & drop";
+      }
+    });
+    wrap.appendChild(b);
+  });
+}
+
+/* drag & drop + picker */
+const drop=$("drop"), fileInput=$("fileInput");
+drop.addEventListener("click", ()=>fileInput.click());
+fileInput.addEventListener("change", e=>{
+  const file=e.target.files[0]; if(file) readFile(file);
+  fileInput.value="";
+});
+["dragenter","dragover"].forEach(ev=>drop.addEventListener(ev, e=>{e.preventDefault(); drop.classList.add("hover");}));
+["dragleave","drop"].forEach(ev=>drop.addEventListener(ev, e=>{e.preventDefault(); drop.classList.remove("hover");}));
+drop.addEventListener("drop", e=>{
+  const file=e.dataTransfer.files[0]; if(file) readFile(file);
+});
+function readFile(file){
+  document.querySelectorAll(".file").forEach(x=>x.classList.remove("active"));
+  const reader=new FileReader();
+  reader.onload=()=>loadText(file.name, reader.result);
+  reader.readAsText(file);
+}
+
+/* warn on unsaved */
+window.addEventListener("beforeunload", e=>{
+  if(state.dirty){ e.preventDefault(); e.returnValue=""; }
+});
+
+buildRepoList();
+</script>
+</body>
+</html>
