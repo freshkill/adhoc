@@ -6,19 +6,20 @@
 ## Contents
 | File | Description |
 |------|-------------|
-| `HPE_Nimble_Asset_Inventory.csv` | Asset inventory — 9 HPE Nimble arrays, with hardware config (CPU, memory, drives) and for-sale asking prices |
+| `HPE_Nimble_Asset_Inventory.csv` | Asset inventory — 9 HPE Nimble arrays with hardware config (CPU, memory, drives). **No pricing — safe to send to buyers.** |
 | `HPE_InfoSight_Arrays_01232026.csv` | Source HPE InfoSight export (serials, raw capacity, ports, support status) |
 | `Prospective_Buyers.csv` | 5 companies to approach for a direct sale with certified data destruction |
+| `Buyer_Outreach_Email.md` | Ready-to-send request-for-offer email (attach the inventory CSV) |
 | `HPE_Nimble_Used_Price_Estimate_2026-07-07__Used_Price_Estimate.csv` | Retail secondary-market value estimates (reference basis) |
 | `HPE_Nimble_Used_Price_Estimate_2026-07-07__Sources_Methodology.csv` | Sources & methodology notes |
 | `README.md` | This summary |
 
 > Spreadsheets are stored as CSV so they render as tables directly on GitHub. Open `../../csv-viewer.html` (e.g. via GitHub Pages) for an in-browser viewer/editor.
 
-## For-sale asking prices (reduced 60% for quick reseller-direct sale)
-Asking prices were cut **60% below retail secondary-market value** to price for a fast direct sale to a reseller, with the expectation that the buyer provides **certified data destruction (NIST 800-88 wipe + Certificate of Destruction)** as part of the deal.
+## Internal price targets (NOT shared with buyers)
+Strategy: **let buyers bid first** — the outreach email requests offers without naming a price. The figures below are internal targets only (retail estimate −60%), kept out of the buyer-facing CSV. Buyers must include **certified data destruction (NIST 800-88 wipe + Certificate of Destruction)** at no charge.
 
-| # | S/N | Model | Type | CPU | Cores | Memory | Drives | Retail est. | **Asking** |
+| # | S/N | Model | Type | CPU | Cores | Memory | Drives | Retail est. | **Internal target** |
 |---|-----|-------|------|-----|------:|-------:|--------|----:|-------:|
 | 1 | 0862 | HF40 | Hybrid | Xeon Silver | 12 | 128 GB | 10TB HDD / 3TB SSD cache | $16,875 | **$6,750** |
 | 2 | 4469 | AF60 | All-Flash | Xeon Silver | 16 | 256 GB | 3.84TB SSD | $47,000 | **$18,800** |
