@@ -7,9 +7,23 @@
 ## Contents
 | File | Description |
 |------|-------------|
-| `HPE_Nimble_Asset_Inventory.xlsx` | Original asset inventory (as supplied) — 9 HPE Nimble arrays |
+| `HPE_Nimble_Asset_Inventory.xlsx` | Inventory + **hardware config** (CPU, RAM, drives), **for-sale prices**, and a **Prospective Buyers** tab |
+| `HPE_InfoSight_Arrays_01232026.csv` | Source HPE InfoSight export used to derive the per-array hardware config |
 | `HPE_Nimble_Used_Price_Estimate_2026-07-07.xlsx` | Reseller-direct offer + retail-resale reference + sources/methodology |
 | `README.md` | This summary |
+
+## Where to sell — 5 prospective buyers (see the "Prospective Buyers" tab)
+All buy used HPE Nimble AF/HF arrays for cash or trade-in; ask each for a written quote **with certified NIST 800-88 data destruction + Certificate included**.
+1. **ITAMG** — enterprise-storage buyback; **R2v3 + NAID AAA certified data destruction** (best fit for the wipe requirement); free quote in ~48h — (212) 651-8500
+2. **ALTA Technologies** — largest US used-Nimble inventory; buys for cash or trade-in — (952) 934-4443
+3. **Spectra** — buys/sells used Nimble since 1982 — (714) 970-7000
+4. **Enterasource** — refurb Nimble reseller, buys trade-ins — (302) 526-9203
+5. **Core 4 Solutions** — high-volume AF60/AF80/HF60 buyer/seller — (952) 548-5720
+
+> Send all five the same package at once and let them compete — expect a 20–40% spread between low and high bid.
+
+## Hardware configuration (from InfoSight + HPE QuickSpecs)
+The inventory sheet now carries full specs per array — S/N (last 4), full array & HPE serials, datacenter, host name, **2 controllers each**, **CPU** (2× Intel Xeon Broadwell per controller), **system RAM** (AF40/HF40 = 256 GB, AF60/HF60 = 512 GB, AF80 = 1 TB, total across both controllers), expansion shelves, **drive config** (type / qty / size), raw HDD/SSD TB, host interface, HW EOS, support status, and the for-sale price. All-flash drive counts are exact; hybrid HDD/SSD splits are best-estimate (InfoSight exports raw capacity, not per-drive detail).
 
 ## The deal being modeled
 Selling **direct to a reseller** (not to an end user), so you accept a wholesale price cut in exchange for speed and certainty. The reseller performs **certified data sanitization to NIST 800-88 "Purge"** (crypto-erase/secure-erase) with a **Certificate of Destruction**; drives are wiped and **retained** in the arrays (not physically shredded), so the flash/HDD value is preserved.
