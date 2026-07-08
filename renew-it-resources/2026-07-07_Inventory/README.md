@@ -10,6 +10,8 @@
 | `HPE_InfoSight_Arrays_01232026.csv` | Source HPE InfoSight export (serials, raw capacity, ports, support status) |
 | `Prospective_Buyers.csv` | 5 companies to approach for a direct sale with certified data destruction |
 | `Buyer_Outreach_Email.md` | Ready-to-send request-for-offer email (attach the inventory CSV) |
+| `Packaging_List_Dallas_DDC1.csv` | Packaging materials for DDC1 — 6 chassis (4 arrays + 2 shelves), 2 pallets |
+| `Packaging_List_Houston_HDC2.csv` | Packaging materials for HDC2 — 7 chassis (5 arrays + 2 shelves), 2 pallets |
 | `HPE_Nimble_Used_Price_Estimate_2026-07-07__Used_Price_Estimate.csv` | Retail secondary-market value estimates (reference basis) |
 | `HPE_Nimble_Used_Price_Estimate_2026-07-07__Sources_Methodology.csv` | Sources & methodology notes |
 | `README.md` | This summary |

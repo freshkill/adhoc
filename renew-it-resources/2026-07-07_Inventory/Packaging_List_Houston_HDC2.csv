@@ -1,0 +1,18 @@
+#,Item,Spec / Part,Qty,Unit,Purpose / Notes
+1,Static shielding bag,Uline S-16082 — 24×36 in open-end 3-mil,9,bags,1 per chassis (7 chassis: 5 arrays + 2 shelves) + 2 spares. 35 in length slides into 36 in bag depth; 17.3 in width fits 24 in bag width. Sold 100/case — split one case with Dallas.
+2,ESD grounding wrist strap,Disposable ESD wrist strap,2,each,For techs handling open chassis during bagging
+3,PE foam sheet,2 in thick 24×36 in polyethylene foam,16,sheets,Top + bottom cushion per chassis (14) + 2 spares
+4,Foam corner blocks,2–3 in PE corner protectors,28,blocks,4 per chassis to protect bezel ears and rear ports
+5,ESD / packing tape,2 in packing tape + 1 ESD-safe tape roll,3,rolls,Seal bags (ESD tape) and wrap foam (packing tape)
+6,Pallet,48×40 in GMA double-faced hardwood,2,pallets,2 chassis per layer × 2 layers = 4/pallet max; load 4+3
+7,Corrugated layer pad,48×40 in double-wall sheet,6,sheets,Bottom / between-layer / top on each pallet
+8,Stretch wrap,18 in × 1500 ft 80-gauge,1,roll,Minimum 5 wraps per pallet incl. pallet base
+9,Ratchet or poly strap,2 in strap with edge protection,8,straps,4 per pallet (2 lengthwise 2 crosswise)
+10,Corner boards,36 in V-board edge protectors,8,each,4 per pallet under straps
+11,Labels,"FRAGILE / THIS SIDE UP / DO NOT STACK",1,pack,Every side of both pallets
+12,Tip-n-Tell / ShockWatch indicator,Impact + tilt indicator,4,each,2 per pallet — deters rough freight handling (optional but cheap insurance)
+13,Accessory box,24×18×12 in double-wall box,2,boxes,Rail kits bezels power cords per array — label with array S/N
+14,Small ESD bags,4×6 in static shielding,1,pack,SFP+ optics and small modules — keep with accessory box
+15,Bubble wrap,12 in × 175 ft 3/16 in,1,roll,Wrap rails and bezels inside accessory boxes
+,,,,,
+,SITE TOTALS,,,,"7 chassis (5 arrays + 2 shelves), est. 875–1050 lb loaded across 2 pallets, footprint 48×40×~31 in each"
