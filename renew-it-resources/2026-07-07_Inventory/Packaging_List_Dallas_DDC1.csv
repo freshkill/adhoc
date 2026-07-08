@@ -4,7 +4,7 @@ Ship order to:,[Dallas datacenter dock address],,,,,
 Covers:,"6 chassis - 4 arrays (HF40-0862, AF60-4469, AF60-7343, AF60-8949) + 2 expansion shelves",,,,,
 ,,,,,,
 #,Item,Uline Part # / Search Term,Description / Spec,Order Qty,Unit,Notes
-1,Static shielding bag,S-16082,24 x 36 in open-end 3-mil,1,case of 100,Need 6 + spares; 100/case is min order. 35 in chassis slides into 36 in depth; 17.3 in fits 24 in width.
+1,Static shielding bag,S-25201,36 x 36 in open-end 3-mil,1,carton of 100,"Need 6 + spares; 100/carton min. 35 in length into 36 in depth; device girth 48.4 in fits bag 72 in circumference. NOTE: 24x36 S-16082 does NOT fit (girth 48.4 > 48)."
 2,Disposable ESD wrist strap,S-12746,Paper wrist strap grounder,2,each,For techs handling chassis during bagging
 3,Foam cushioning,S-6438,Convoluted foam set 24 x 36 x 2 in,7,sets,Top + bottom per chassis (6) + 1 spare; egg-crate grips chassis
 4,Foam corner protectors,S-6064,3-5/8 x 3 x 2 in,24,protectors,4 per chassis - bezel ears and rear ports
