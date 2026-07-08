@@ -1,23 +1,26 @@
-ORDER 1 OF 2 — DALLAS (DDC1),,,,,
-Ship order to:,[Dallas datacenter dock address],,,,
-Covers:,"6 chassis — 4 arrays (HF40-0862, AF60-4469, AF60-7343, AF60-8949) + 2 expansion shelves",,,,
-,,,,,
-#,Item,Spec / Part,Order Qty,Unit,Purpose / Notes
-1,Static shielding bag,Uline S-16082 — 24×36 in open-end 3-mil,1,case of 100,Need 6 + spares; case of 100 is the minimum order. 35 in chassis length slides into 36 in bag depth; 17.3 in width fits 24 in bag width.
-2,ESD grounding wrist strap,Disposable ESD wrist strap,2,each,For techs handling chassis during bagging
-3,PE foam sheet,2 in thick 24×36 in polyethylene foam,14,sheets,Top + bottom cushion per chassis (12) + 2 spares
-4,Foam corner blocks,2–3 in PE corner protectors,24,blocks,4 per chassis to protect bezel ears and rear ports
-5,ESD tape,ESD-safe sealing tape,1,roll,Seal ESD bags
-6,Packing tape,2 in carton sealing tape,2,rolls,Wrap foam and seal accessory boxes
-7,Pallet,48×40 in GMA double-faced hardwood,2,pallets,2 chassis per layer × 2 layers max; load 3+3
-8,Corrugated layer pad,48×40 in double-wall sheet,6,sheets,Bottom / between-layer / top on each pallet
-9,Stretch wrap,18 in × 1500 ft 80-gauge,1,roll,Minimum 5 wraps per pallet incl. pallet base
-10,Ratchet or poly strap,2 in strap with edge protection,8,straps,4 per pallet (2 lengthwise 2 crosswise)
-11,Corner boards,36 in V-board edge protectors,8,each,4 per pallet under straps
-12,Labels,"FRAGILE / THIS SIDE UP / DO NOT STACK",1,pack,Every side of both pallets
-13,Tip-n-Tell / ShockWatch indicator,Impact + tilt indicator,4,each,2 per pallet — deters rough freight handling
-14,Accessory box,24×18×12 in double-wall box,2,boxes,Rail kits bezels power cords — label with array S/N
-15,Small ESD bags,4×6 in static shielding,1,pack,SFP+ optics and small modules — keep with accessory box
-16,Bubble wrap,12 in × 175 ft 3/16 in,1,roll,Wrap rails and bezels inside accessory boxes
-,,,,,
-,ORDER TOTALS,,,,"6 chassis, est. 750–900 lb loaded across 2 pallets, footprint 48×40×~31 in each"
+ORDER 1 OF 2 - DALLAS (DDC1),,,,,,
+Vendor:,"Uline (Coppell TX warehouse - next-day ground). uline.com / 1-800-295-5510",,,,,
+Ship order to:,[Dallas datacenter dock address],,,,,
+Covers:,"6 chassis - 4 arrays (HF40-0862, AF60-4469, AF60-7343, AF60-8949) + 2 expansion shelves",,,,,
+,,,,,,
+#,Item,Uline Part # / Search Term,Description / Spec,Order Qty,Unit,Notes
+1,Static shielding bag,S-16082,24 x 36 in open-end 3-mil,1,case of 100,Need 6 + spares; 100/case is min order. 35 in chassis slides into 36 in depth; 17.3 in fits 24 in width.
+2,Disposable ESD wrist strap,S-12746,Paper wrist strap grounder,2,each,For techs handling chassis during bagging
+3,Foam cushioning,S-6438,Convoluted foam set 24 x 36 x 2 in,7,sets,Top + bottom per chassis (6) + 1 spare; egg-crate grips chassis
+4,Foam corner protectors,S-6064,3-5/8 x 3 x 2 in,24,protectors,4 per chassis - bezel ears and rear ports
+5,Anti-static tape,"search: anti static tape 2 inch",ESD-safe sealing tape,1,roll,Seal ESD bag openings
+6,Carton sealing tape,"search: packing tape 2 inch",2 in clear carton tape,2,rolls,Foam and accessory boxes
+7,Wood pallet 48 x 40,H-2089 (recycled) or H-1260 (new),Heat-treated GMA 48 x 40 in,2,pallets,Cheaper from a local pallet recycler ($8-15) if you prefer
+8,Corrugated layer pads,S-8339,40 x 48 in 275 lb double-wall,6,pads,Bottom / between-layer / top per pallet
+9,Stretch wrap,S-2190,Cast 80 ga 18 in x 1500 ft,1,roll,Min 5 wraps per pallet incl. base
+10,Poly strapping kit,S-107,1/2 in x 3000 ft + tensioner + buckles,1,kit,One kit covers both pallets; 4 straps each
+11,Edge protectors,S-6062,3 x 3 x 36 in medium-duty,8,each,4 per pallet under straps
+12,Fragile - Electronic Equipment labels,S-1860,3 x 5 in,1,roll,Every side of both pallets
+13,This Side Up labels,"search: this side up labels",Directional arrows,1,roll,Every side of both pallets
+14,Tip-N-Tell tilt indicator,S-866,Tilt indicator,4,each,2 per pallet
+15,ShockWatch impact indicator,S-5158,50G impact indicator,4,each,2 per pallet - deters rough handling
+16,Accessory box,"search: 24 x 18 x 12 box",24 x 18 x 12 in double-wall,2,boxes,Rails bezels cords - label with array S/N
+17,Small static shielding bag,S-1313,4 x 6 in open-end,1,pack,SFP+ optics and small modules
+18,Bubble wrap,S-1012,12 in x 175 ft 3/16 in,1,roll,Rails and bezels inside accessory boxes
+,,,,,,
+,ORDER TOTALS,,,,,"6 chassis, est. 750-900 lb loaded across 2 pallets, footprint 48 x 40 x ~31 in each"
