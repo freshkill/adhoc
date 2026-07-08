@@ -1,18 +1,23 @@
-#,Item,Spec / Part,Qty,Unit,Purpose / Notes
-1,Static shielding bag,Uline S-16082 — 24×36 in open-end 3-mil,8,bags,1 per chassis (6 chassis: 4 arrays + 2 shelves) + 2 spares. 35 in length slides into 36 in bag depth; 17.3 in width fits 24 in bag width. Sold 100/case — split one case with Houston.
-2,ESD grounding wrist strap,Disposable ESD wrist strap,2,each,For techs handling open chassis during bagging
+ORDER 1 OF 2 — DALLAS (DDC1),,,,,
+Ship order to:,[Dallas datacenter dock address],,,,
+Covers:,"6 chassis — 4 arrays (HF40-0862, AF60-4469, AF60-7343, AF60-8949) + 2 expansion shelves",,,,
+,,,,,
+#,Item,Spec / Part,Order Qty,Unit,Purpose / Notes
+1,Static shielding bag,Uline S-16082 — 24×36 in open-end 3-mil,1,case of 100,Need 6 + spares; case of 100 is the minimum order. 35 in chassis length slides into 36 in bag depth; 17.3 in width fits 24 in bag width.
+2,ESD grounding wrist strap,Disposable ESD wrist strap,2,each,For techs handling chassis during bagging
 3,PE foam sheet,2 in thick 24×36 in polyethylene foam,14,sheets,Top + bottom cushion per chassis (12) + 2 spares
 4,Foam corner blocks,2–3 in PE corner protectors,24,blocks,4 per chassis to protect bezel ears and rear ports
-5,ESD / packing tape,2 in packing tape + 1 ESD-safe tape roll,3,rolls,Seal bags (ESD tape) and wrap foam (packing tape)
-6,Pallet,48×40 in GMA double-faced hardwood,2,pallets,2 chassis per layer (2×17.3 = 34.6 in across 40 in) × 2 layers = 4/pallet max; load 3+3
-7,Corrugated layer pad,48×40 in double-wall sheet,6,sheets,Bottom / between-layer / top on each pallet
-8,Stretch wrap,18 in × 1500 ft 80-gauge,1,roll,Minimum 5 wraps per pallet incl. pallet base
-9,Ratchet or poly strap,2 in strap with edge protection,8,straps,4 per pallet (2 lengthwise 2 crosswise)
-10,Corner boards,36 in V-board edge protectors,8,each,4 per pallet under straps
-11,Labels,"FRAGILE / THIS SIDE UP / DO NOT STACK",1,pack,Every side of both pallets
-12,Tip-n-Tell / ShockWatch indicator,Impact + tilt indicator,4,each,2 per pallet — deters rough freight handling (optional but cheap insurance)
-13,Accessory box,24×18×12 in double-wall box,2,boxes,Rail kits bezels power cords per array — label with array S/N
-14,Small ESD bags,4×6 in static shielding,1,pack,SFP+ optics and small modules — keep with accessory box
-15,Bubble wrap,12 in × 175 ft 3/16 in,1,roll,Wrap rails and bezels inside accessory boxes
+5,ESD tape,ESD-safe sealing tape,1,roll,Seal ESD bags
+6,Packing tape,2 in carton sealing tape,2,rolls,Wrap foam and seal accessory boxes
+7,Pallet,48×40 in GMA double-faced hardwood,2,pallets,2 chassis per layer × 2 layers max; load 3+3
+8,Corrugated layer pad,48×40 in double-wall sheet,6,sheets,Bottom / between-layer / top on each pallet
+9,Stretch wrap,18 in × 1500 ft 80-gauge,1,roll,Minimum 5 wraps per pallet incl. pallet base
+10,Ratchet or poly strap,2 in strap with edge protection,8,straps,4 per pallet (2 lengthwise 2 crosswise)
+11,Corner boards,36 in V-board edge protectors,8,each,4 per pallet under straps
+12,Labels,"FRAGILE / THIS SIDE UP / DO NOT STACK",1,pack,Every side of both pallets
+13,Tip-n-Tell / ShockWatch indicator,Impact + tilt indicator,4,each,2 per pallet — deters rough freight handling
+14,Accessory box,24×18×12 in double-wall box,2,boxes,Rail kits bezels power cords — label with array S/N
+15,Small ESD bags,4×6 in static shielding,1,pack,SFP+ optics and small modules — keep with accessory box
+16,Bubble wrap,12 in × 175 ft 3/16 in,1,roll,Wrap rails and bezels inside accessory boxes
 ,,,,,
-,SITE TOTALS,,,,"6 chassis (4 arrays + 2 shelves), est. 750–900 lb loaded across 2 pallets, footprint 48×40×~31 in each"
+,ORDER TOTALS,,,,"6 chassis, est. 750–900 lb loaded across 2 pallets, footprint 48×40×~31 in each"
